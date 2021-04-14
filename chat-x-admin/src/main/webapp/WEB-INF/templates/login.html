@@ -1,0 +1,68 @@
+<!DOCTYPE html>     
+<html>
+    <head>
+        <title>Chat-X admin</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="-1">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css">     
+        <link rel="stylesheet" type="text/css" href="css/ctrls.css">
+        <link rel="stylesheet" type="text/css" href="css/ctrls.csgggggggggggggggs">
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/login.js"></script>
+    </head>
+
+    <body  onload="_applayDynamicSettings ()">
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="topBar">
+            <canvas id="forTriangle" width="100" height="60" style="position: absolute; top: 38px; left: 160px; z-index: 200000;"></canvas>
+            <div style="color:red">
+                <span style="font-size: 20px; font-style: italic">Администрирование Chat-X</span>
+            </div>
+        </div>
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="leftPanel">
+            <div id="leftMenu">
+                <ul id="leftMenu-container">
+                    <li class="li-left"><a href="/chatx/user-login">Войти как пользователь в Chat-X</a></li>
+                    <li class="li-left"><a href="/chatx/do-register-user">Зарегистрироваться как пользователь Chat-X</a></li> 
+                </ul>        
+            </div>
+        </div>
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="rightPanel">     
+            
+            <center>
+                    <H1>Добро пожаловать.</H1>
+                    <H3>Войти в админку Chat-X</H3>            
+            </center>
+            
+            <Br>
+            <Br>
+            <Br>
+            <div id="login-panel">
+                <!--   ------------------------------------------------------------------------------    -->
+                <div class="btn" id="login-button" onclick="login (this.parentNode);">
+                    авторизоваться
+                </div>
+                <!--   ------------------------------------------------------------------------------    -->                
+                <input class="input-line" id="nick" value="" type="text" placeholder="имя пользователя" name="nick"/>
+                <input class="input-line" id="pass" value="" type="password" placeholder="пароль" name="passw"/>
+                <!--   ------------------------------------------------------------------------------    -->
+                
+                <div class="info-panel-container">                    
+                    <div class="info-panel">                            
+
+                            <div class="btn-waiting" id="btn-waiting" style="display:none;">
+                                <img src="img/hourglass.gif"/>
+                            </div>
+                            <div class="msg-container" id="msg-container" style="display:none;"/>
+                   </div>
+                </div>          
+            </div> 
+        </div>
+    </body>
+</html>
