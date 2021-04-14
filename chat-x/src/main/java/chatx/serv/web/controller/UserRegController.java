@@ -12,7 +12,7 @@ public class UserRegController
 {
     private static AtomicInteger name_counter = new AtomicInteger (0);     
     //**************************************************************************    
-    @RequestMapping (value = {"/user-reg.html", "/user-reg"},  
+    @RequestMapping (value = {"/user-reg", "/user-reg"},  
                      method = RequestMethod.GET,
                      produces = "text/html;charset=utf-8")    
     public String showPgUserReg (final Model model) 
@@ -21,7 +21,7 @@ public class UserRegController
     }
         
     //**************************************************************************    
-    @RequestMapping (value = {"/do-register-user", "/do-register-user.html"},  
+    @RequestMapping (value = {"/do-register-user", "/do-register-user"},  
                      method = RequestMethod.GET,
                      produces = "text/html;charset=utf-8")    
     public String doRegisterUser (final Model model) 

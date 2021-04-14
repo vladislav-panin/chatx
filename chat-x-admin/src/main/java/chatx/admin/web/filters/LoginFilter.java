@@ -1,7 +1,6 @@
 package chatx.admin.web.filters;
 
 import chatx.admin.utils.ResponseCode;
-import chatx.admin.web.controller.AjaxMsg;
 import chatx.admin.web.controller.LoginController;
 import java.io.IOException;
 import javax.servlet.Filter;

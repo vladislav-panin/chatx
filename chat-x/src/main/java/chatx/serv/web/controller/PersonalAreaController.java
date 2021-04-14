@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PersonalAreaController 
 {
     //**************************************************************************    
-    @RequestMapping (value = {"/personal-area/", "/personal-area.html"},  
+    @RequestMapping (value = {"/personal-area/", "/personal-area"},  
                      method = RequestMethod.GET,
                      produces = "text/html;charset=utf-8")    
     

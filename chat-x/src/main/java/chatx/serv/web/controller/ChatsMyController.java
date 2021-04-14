@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ChatsMyController
 {
     //**************************************************************************    
-    @RequestMapping (value = {"/chats-my/", "/chats-my.html"},  
+    @RequestMapping (value = {"/chats-my/", "/chats-my"},  
                      method = RequestMethod.GET,
                      produces = "text/html;charset=utf-8")    
     
