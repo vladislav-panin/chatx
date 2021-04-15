@@ -129,6 +129,8 @@
     </dependencies>
 
     <build>
+         <finalName>chatx</finalName>
+         
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
