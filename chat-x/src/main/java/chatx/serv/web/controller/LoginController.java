@@ -44,9 +44,9 @@ public class LoginController
         ChatUser  user = new ChatUser (nick);
         ChatUserContainer uCont = new ChatUserContainer (user);
         
-        AjaxMsg amess = (new LoginService ()).login(uCont, pass);        
+        AjaxMsg amsg = (new LoginService ()).login(uCont, pass);        
         
-        ResponseCode rc = amess.getResponseCode();
+        ResponseCode rc = amsg.getResponseCode();
         
         if (rc == ResponseCode.RESPONSE_CODE_OK) {
         
@@ -56,13 +56,11 @@ public class LoginController
             return "redirect:/personal-area";            
         }
         
-        String loginMessage = "Такое сочетание пользователь/пароль не найдено!<br>Повторите ввод пароля.";
+        String loginMessage = amsg.getMessage(); 
         
         model.addAttribute("msgPanelStyle", " display:block; color: red; min-height: 24px; padding: 10px 16px 10px 16px; border-color: red; ");
         model.addAttribute("loginMessage", loginMessage);   
         
         return "login";        
     }
-        
-   
 }

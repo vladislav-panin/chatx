@@ -13,8 +13,8 @@ public class AjaxMsg
 {
     protected String header = ""; 
     protected String message = "";  
-    protected ResponseCode responseCode = ResponseCode.RESPONSE_CODE_ERROR;    
-    protected HttpStatus httpStatus = HttpStatus.BAD_REQUEST;      
+    protected ResponseCode responseCode = ResponseCode.RESPONSE_CODE_UNDEFINED;    
+    protected HttpStatus httpStatus = HttpStatus.I_AM_A_TEAPOT;      
     
     //******************************************************************************************************************    
     public ResponseEntity<String> makeResponse ()

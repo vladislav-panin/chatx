@@ -8,9 +8,13 @@
         <meta http-equiv="pragma" content="no-cache"/>
         <meta http-equiv="expires" content="-1"/>
         <link rel="stylesheet" type="text/css" href="css/main.css"/>         
+        <link rel="stylesheet" type="text/css" href="css/ctrls.css"/>    
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/user-reg.js"></script>
+        <script>
+            $(document).ready(OnDocumentReady);
+        </script>
     </head>
 <body>    
     <div id="topBar">
@@ -23,17 +27,51 @@
          <div id="leftPanel">
             <div id="leftMenu">
                 <ul id="leftMenu-container">
-                    <li class="li-left"><a href="/chatx/login">Войти как пользователь</a></li>
-                    <li class="li-left selected"><a href="/chatx/do-register-user">Зарегистрироваться как пользователь Chat-X</a></li> 
+                    <li class="li-left"><a href="/chatx/login">Войти как пользователь Chat-X</a></li>
+                    <li class="li-left selected"><a href="/chatx/user-reg">Зарегистрироваться в Chat-X</a></li> 
                 </ul>        
             </div>
         </div>
                     
-        <div id="rightPanel">                   
-                <H1>Регистрация</H1>
-                <div id="workPanel">                     
+        
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="rightPanel">     
+            
+            <center>
+                    <H1>Chat-X регистрация</H1>                    
+            </center>
+            
+            <Br>
+            <Br>
+            <Br>
+            <div id="reg-panel">
+            <!--   ------------------------------------------------------------------------------    -->
+                <div class="btn" id="reg-button" onclick="$('#formDoUserRegistrationId').submit();">
+                     Зарегистрировать
+                </div>
+            <br><br>
+                <form action="do-user-registration" name="formDoUserRegistration" id="formDoUserRegistrationId"  method="POST" accept-charset="UTF-8">     
+                    <table>
+                        <tr><td align="right">ник:            </td>  <td><input class="input-line-in-table" id="nick"       value=""  type="text"     placeholder="имя пользователя" name="nick"/> </td></tr>
+                        <tr><td align="right">пароль:         </td>  <td><input class="input-line-in-table" id="pass"       value=""  type="password" placeholder="пароль"      name="pass"/>       </td></tr>
+                        <tr><td align="right">еще раз пароль: </td>  <td><input class="input-line-in-table" id="pass_check" value=""  type="password" placeholder="подтвердить" name="pass_check" required/> </td></tr>
+                        <tr><td align="right">email:          </td>  <td><input class="input-line-in-table" id="emailId"    value=""  type="email"                              name="email"/>      </td></tr>
+                        <tr><td align="right">имя:            </td>  <td><input class="input-line-in-table" id="firstname"  value=""  type="text"     placeholder="имя"         name="firstname"/>  </td></tr>
+                        <tr><td align="right">фамилия:        </td>  <td><input class="input-line-in-table" id="lastname"   value=""  type="text"     placeholder="фамилия"     name="lastname"/>   </td></tr>
+                    </table>
+                </form>                      
 
-                </div>        
-        </div>
-</body>
+                <div class="info-panel-container">                    
+                    <div class="info-panel">                            
+
+                            <div class="msg-container"  id="msg-container"  style="display: none;"  th:style="${msgPanelStyle}">  
+                                [(${regMessage})]
+                                <span th:text="${loginMessage}"></span>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
 </html>

@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class AdminWelcomeController
+public class PersonalAreaController
 {   
     //******************************************************************************************************************
-    @RequestMapping (value = "/admin-welcome",  
+    @RequestMapping (value = "/personal-area",  
                      method = RequestMethod.GET,                      
                      produces = "text/html;charset=utf-8")    
     
     public String showAdminLogin (final Model model, HttpSession session) 
     {       
-        return "admin-welcome";
+        return "personal-area";
     }      
     //******************************************************************************************************************
 }

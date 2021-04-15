@@ -10,9 +10,11 @@
 
         <link rel="stylesheet" type="text/css" href="css/main.css">     
         <link rel="stylesheet" type="text/css" href="css/ctrls.css">
-        <link rel="stylesheet" type="text/css" href="css/ctrls.csgggggggggggggggs">
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/login.js"></script>
+        <script>
+            $(document).ready(OnDocumentReady);
+        </script>
     </head>
 
     <body  onload="_applayDynamicSettings ()">
@@ -28,7 +30,7 @@
             <div id="leftMenu">
                 <ul id="leftMenu-container">
                     <li class="li-left"><a href="/chatx/login">Войти как пользователь в Chat-X</a></li>
-                    <li class="li-left"><a href="/chatx/do-register-user">Зарегистрироваться как пользователь Chat-X</a></li> 
+                    <li class="li-left"><a href="/chatx/user-reg">Зарегистрироваться как пользователь Chat-X</a></li> 
                 </ul>        
             </div>
         </div>
@@ -45,7 +47,7 @@
             <Br>
             <div id="login-panel">
                 <!--   ------------------------------------------------------------------------------    -->
-                <div class="btn" id="login-button" onclick="login (this.parentNode);">
+                <div class="btn" id="login-button" onclick="login ();">
                     войти
                 </div>
                 <!--   ------------------------------------------------------------------------------    -->                

@@ -67,9 +67,9 @@ public class LoginController
         Administrator  admin = new Administrator (nick);
         AdminContainer aCont = new AdminContainer (admin);
         
-        AjaxMsg amess = (new LoginService ()).login(aCont, pass);        
+        AjaxMsg amsg = (new LoginService ()).login(aCont, pass);        
         
-        ResponseCode rc = amess.getResponseCode();
+        ResponseCode rc = amsg.getResponseCode();
         
         if (rc == ResponseCode.RESPONSE_CODE_OK) {
         
@@ -77,7 +77,7 @@ public class LoginController
             session.setAttribute("loggedIn", rc.toString());            
         }
         
-        ResponseEntity<String> ret = amess.makeResponse();
+        ResponseEntity<String> ret = amsg.makeResponse();
         return ret;          
     }     
     // *****************************************************************************************************************

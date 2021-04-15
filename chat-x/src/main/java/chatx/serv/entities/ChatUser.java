@@ -18,11 +18,11 @@ public class ChatUser {
         this.nick = nick; 
     }
     
-    public ChatUser ( long   id, 
-                           String nick, 
-                           String firstName, 
-                           String lastName, 
-                           String email
+    public ChatUser (   long   id, 
+                        String nick, 
+                        String firstName, 
+                        String lastName, 
+                        String email
     )
     {
         this.id =        id;

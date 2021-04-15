@@ -42,14 +42,21 @@ public class LoginService {
             
             ret.setResponseCode(ResponseCode.RESPONSE_CODE_ERROR);
             ret.setHeader("Ошибка аутентификации");
-            ret.setMessage("Такое сочетание пользователь/пароль не найдено!");
+            ret.setMessage("Такое сочетание пользователь/пароль не найдено!<br>Повторите ввод пароля.");            
+            return ret;
+        }
+        
+        if (restoredUser.isBlocked()) {
             
+            ret.setResponseCode(ResponseCode.RESPONSE_CODE_ERROR);
+            ret.setHeader("Модерирование");
+            ret.setMessage("Пользователь с ником " + restoredUser.getNick() + " забанен, доступ в Chat-X блокирован.");            
             return ret;
         }
         
         ret.setResponseCode(ResponseCode.RESPONSE_CODE_OK);
         ret.setHeader("Аутентификация прошла успешно");
-        ret.setMessage("Добро пожалjвать в Chat-X!");
+        ret.setMessage("Добро пожаловать в Chat-X!");
         
         uCont.setUser(restoredUser);      
         

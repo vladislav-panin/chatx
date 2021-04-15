@@ -39,7 +39,7 @@ function getNickNPass ()
     return jStr;
 }
 // *********************************************************************************************************************
-function login (login_panel_node)
+function login ()
 {
     console.log("JS: sending login is started ******************");
     
@@ -87,7 +87,7 @@ function beforeSendHandler(e)
 
 function redirectAfterLogin()
 {
-    window.location.replace("admin-welcome");
+    window.location.replace("personal-area");
 }
 
 function completeHandler(jObj)
@@ -158,4 +158,26 @@ function errorHandler(e, textStatus, errMess)
         $(el).show();        
     }
 }
+// *********************************************************************************************************************
+// *********************************************************************************************************************
+function OnDocumentReady ()
+{
+    $('#pass').keypress(function(event){
+        
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            
+            login ();
+        }
+    });
+    
+    $('#nick').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            
+            login ();
+        }
+    });
+}
+// *********************************************************************************************************************
 // *********************************************************************************************************************

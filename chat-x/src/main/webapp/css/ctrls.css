@@ -6,6 +6,13 @@
     margin-bottom: 10px;
     display: block;
 }
+.input-line-in-table
+{
+    padding-left: 4px; height: 24px;  width: 300px; border: 1px solid #B9C8D5;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: block;
+}
 /* ****************************************************************************************************************** */
 .btn
 {

@@ -42,8 +42,15 @@ public class LoginService {
             
             ret.setResponseCode(ResponseCode.RESPONSE_CODE_ERROR);
             ret.setHeader("Ошибка аутентификации");
-            ret.setMessage("Такое сочетание администратор/пароль не найдено!");
+            ret.setMessage("Такое сочетание администратор/пароль не найдено!");            
+            return ret;
+        }
+        
+        if (restoredAdmin.isBlocked()) {
             
+            ret.setResponseCode(ResponseCode.RESPONSE_CODE_ERROR);
+            ret.setHeader("Модерирование");
+            ret.setMessage("Администратор с ником " + restoredAdmin.getNick() + " забанен, доступ в админку Chat-X блокирован.");            
             return ret;
         }
         
