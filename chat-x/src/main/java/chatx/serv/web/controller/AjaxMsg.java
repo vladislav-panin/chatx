@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
+// разбираюсь с гитом
 @Controller
 public class AjaxMsg
 {
