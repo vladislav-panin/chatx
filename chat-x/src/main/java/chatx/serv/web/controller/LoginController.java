@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/* функциональность по задаче Task #8420, уже реализована.
+   в рамках освоения гита будем считать что мы сделали это на ветке: task_8420_authentification_page*/
 // *********************************************************************************************************************
 @Controller
 public class LoginController 
