@@ -4,6 +4,10 @@ public class ChatUserContainer {
     
     protected ChatUser user;
 
+    public ChatUserContainer () {
+        this.user = null;
+    }
+    
     public ChatUserContainer (ChatUser user) {
         this.user = user;
     }

@@ -52,7 +52,7 @@ public class LoginController
         
         if (rc == ResponseCode.RESPONSE_CODE_OK) {
         
-            session.setAttribute("user_id", user.getId());
+            session.setAttribute("user_id", uCont.getUser().getId());
             session.setAttribute("loggedIn", rc.toString());            
         
             return "redirect:/personal-area";            

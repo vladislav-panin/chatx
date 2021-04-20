@@ -57,7 +57,8 @@ public class UserRegController
         ResponseCode rc = amsg.getResponseCode();
         if (rc != ResponseCode.RESPONSE_CODE_UNDEFINED) {
             
-            return  doErrorResponse (model, amsg);
+            doErrorResponse (model, amsg);
+            return "user-reg";
         }
                 
         ChatUser  user = new ChatUser (-1, nick, firstname, lastname, email);                  
@@ -72,18 +73,17 @@ public class UserRegController
             return "redirect:/personal-area";            
         }
         
-        return  doErrorResponse (model, amsg);
+        doErrorResponse (model, amsg);        
+        return "user-reg";        
     }
     // *****************************************************************************************************************
     
-    public String doErrorResponse (final Model model, AjaxMsg amsg)
+    public void doErrorResponse (final Model model, AjaxMsg amsg)
     {
         String regMessage = amsg.getMessage();
         
         model.addAttribute("msgPanelStyle", " display:block; color: red; min-height: 24px; padding: 10px 16px 10px 16px; border-color: red; ");
         model.addAttribute("regMessage", "ОШИБКА: " + regMessage);
-        
-        return "user-reg";        
     }
     // *****************************************************************************************************************
     public void checkParams (  AjaxMsg amsg

@@ -36,11 +36,40 @@
             </div>
         </div>
                     
-        <div id="rightPanel">                   
-                <H1>Личный кабинет</H1>
-                <div id="workPanel">                     
+        <div id="rightPanel"> 
+            <center>
+                    <H1>Личный кабинет - персональные данные</H1>
+            </center>
+            
+            <Br>
+            <Br>
+            <Br>
+            <div id="reg-panel">
+            <!--   ------------------------------------------------------------------------------    -->
+                <div class="btn" id="reg-button" onclick="$('#formPersonalDataId').submit();">
+                     Зарегистрировать
+                </div>
+            <br><br>
+                <form action="save-personal-data" name="formPersonalData" id="formPersonalDataId"  method="POST" accept-charset="UTF-8">     
+                    <table>
+                        <tr><td align="right">ник:            </td>  <td><input class="input-line-in-table" id="nick"       th:value="${nick}"      type="text"     placeholder="имя пользователя" name="nick"/> </td></tr>                        
+                        <tr><td align="right">email:          </td>  <td><input class="input-line-in-table" id="emailId"    th:value="${email}"     type="email"                              name="email"/>      </td></tr>
+                        <tr><td align="right">имя:            </td>  <td><input class="input-line-in-table" id="firstname"  th:value="${firstname}" type="text"     placeholder="имя"         name="firstname"/>  </td></tr>
+                        <tr><td align="right">фамилия:        </td>  <td><input class="input-line-in-table" id="lastname"   th:value="${lastname}"  type="text"     placeholder="фамилия"     name="lastname"/>   </td></tr>
+                    </table>
+                </form>                      
 
-                </div>        
-        </div>
-</body>
+                <div class="info-panel-container">                    
+                    <div class="info-panel">                            
+
+                            <div class="msg-container"  id="msg-container"  style="display: none;"  th:style="${msgPanelStyle}">  
+                                [(${regMessage})]
+                                <span th:text="${loginMessage}"></span>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </body>
 </html>

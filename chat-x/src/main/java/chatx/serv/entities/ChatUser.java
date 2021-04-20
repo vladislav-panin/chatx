@@ -2,7 +2,7 @@ package chatx.serv.entities;
 
 public class ChatUser {
     
-    protected long   id = 0L;
+    protected long   id = -1L;
     protected String nick = null;
     protected String firstName = null;
     protected String lastName = null;
