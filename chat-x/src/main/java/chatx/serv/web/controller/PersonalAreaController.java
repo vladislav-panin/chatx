@@ -31,8 +31,14 @@ public class PersonalAreaController
 
         Long user_id = (Long)session.getAttribute ("user_id");
         
+        if (null == user_id) {       
+            String err = "ERROR! Попытка входа со старой сессией - пользователь имеет сессию, но в сессии нет идентификатора пользователя!";
+            System.out.println(err);
+            throw new AuthenticationException (err);
+        }
+        
         if (-1L == user_id) {       
-            String err = "ERROR! Попытка взлома - пользователь имеет сессию, но в сессии нет идентификатора пользователя!";
+            String err = "ERROR! Попытка входа без user_id (=-1L)!";
             System.out.println(err);
             throw new AuthenticationException (err);
         }
