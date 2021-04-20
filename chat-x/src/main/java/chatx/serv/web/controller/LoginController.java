@@ -18,6 +18,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController 
 {
     // *****************************************************************************************************************
+    public static boolean checkIfLoginUri (String uri) {        
+        
+        if (uri.equalsIgnoreCase("/")                 || 
+            uri.equalsIgnoreCase("/login")            ||  
+            uri.equalsIgnoreCase("/login/")           ||  
+            uri.equalsIgnoreCase("/index.html")       ||
+            uri.equalsIgnoreCase("/login/index.html") ||
+            uri.equalsIgnoreCase("/do-chat-login")    ||
+            uri.equalsIgnoreCase("/do-chat-login/") 
+           )
+            return true;
+        
+        return false;
+    }    
+    
+    // *****************************************************************************************************************
     @RequestMapping (value = {"/", "/login", "/index.html", "/login/index.html"},  
                      method = RequestMethod.GET,
                      produces = {"text/html;charset=utf-8"})

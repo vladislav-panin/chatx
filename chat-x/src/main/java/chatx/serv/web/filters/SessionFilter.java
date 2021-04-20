@@ -1,7 +1,8 @@
-package chatx.admin.web.filters;
+package chatx.serv.web.filters;
 
-import chatx.admin.utils.ResponseCode;
-import chatx.admin.web.controller.LoginController;
+import chatx.serv.utils.ResponseCode;
+import chatx.serv.web.controller.LoginController;
+import chatx.serv.web.controller.UserRegController;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,11 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-// *********************************************************************************************************************
-public class LoginFilter implements Filter 
-{        
-    public LoginFilter() 
-    {}    
+
+public class SessionFilter implements Filter {
+    
+    public SessionFilter() {
+    }     
 
     // *****************************************************************************************************************
     @Override
@@ -34,14 +35,12 @@ public class LoginFilter implements Filter
                     return;
                 }
 
+                // здесь остались запросы неразрешенных ресурсов запрошенных неаутентифицированным пользователем  
                 /*
-                // здесь остались запросы неразрешенных ресурсов запрошенных неаутентифицированным пользователем        
                 boolean isHttpStatusSet = response.isCommitted ();
-
                 response.reset();
                 isHttpStatusSet = response.isCommitted ();
                 ((HttpServletResponse)response).setStatus(HttpServletResponse.SC_NOT_FOUND);
-
                 isHttpStatusSet = response.isCommitted ();
                 */
         }
@@ -90,12 +89,16 @@ public class LoginFilter implements Filter
         if (LoginController.checkIfLoginUri(uri))
             return true; // пропускаем страницу аутентифиции
         
+        if (UserRegController.checkIfRegisterUri(uri))
+            return true; // пропускаем страницу регистрации
+        
         if (isResourceAllowedOnLogining (uri)) 
             return true; // пропускаем все разрешенные ресурсы
                     
         // здесь остались запросы неразрешенных ресурсов запрошенных не аутентифицированным пользователем 
         // отправляем его логиниться
         httpResponse.sendRedirect(contextUri + "/login");
+        
         return false;
     }
     // *****************************************************************************************************************
@@ -119,5 +122,5 @@ public class LoginFilter implements Filter
 
     @Override
     public void destroy() {        
-    }
+    }    
 }

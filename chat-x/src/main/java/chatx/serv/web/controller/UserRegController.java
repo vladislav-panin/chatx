@@ -5,7 +5,6 @@ import chatx.serv.entities.ChatUser;
 import chatx.serv.entities.ChatUserContainer;
 import chatx.serv.utils.ResponseCode;
 import java.sql.SQLException;
-import java.util.concurrent.atomic.AtomicInteger;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class UserRegController 
 {
-    private static AtomicInteger name_counter = new AtomicInteger (0);     
+    // *****************************************************************************************************************
+    public static boolean checkIfRegisterUri (String uri) {        
+        
+        if (uri.equalsIgnoreCase("/")                      || 
+            uri.equalsIgnoreCase("/user-reg")              ||  
+            uri.equalsIgnoreCase("/user-reg/")             ||  
+            uri.equalsIgnoreCase("/do-user-registration")  ||
+            uri.equalsIgnoreCase("/do-user-registration/") 
+           )
+            return true;
+        
+        return false;
+    }    
+    
     // *****************************************************************************************************************
     @RequestMapping (value = {"/user-reg", "/user-reg/"},  
                      method = RequestMethod.GET,
