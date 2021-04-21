@@ -1,0 +1,42 @@
+<!DOCTYPE html>     
+<html>
+    <head>
+        <title>Chat-X</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="-1">
+
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/ctrls.css">
+          
+    </head>
+
+    <body>
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="topBar">
+            <div >
+                Chat-X, Специально для ТГУ, <span style="font-size: 20px; color: #b0b0b0; font-style: italic">версия тестовая</span>
+            </div>
+        </div>
+
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="leftPanel">
+            <div id="leftMenu">
+                <ul id="leftMenu-container">
+                    <li class="li-left selected"><a href="/chatx/login">Войти как пользователь в Chat-X</a></li>
+                    <li class="li-left"><a href="/chatx/user-reg">Зарегистрироваться в Chat-X</a></li> 
+                </ul>        
+            </div>
+        </div>
+<!--   ------------------------------------------------------------------------------    -->
+        <div id="rightPanel">     
+            
+            <center>
+                    <H1>Добро пожаловать.</H1>
+                    <span th:text="${msg}"></span>           
+            </center>
+        </div>        
+    </body>
+</html>
